@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beranda - Rainfall E-Commerce</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <div class="top-bar">
+    <span>Selamat datang di Rainfall E-commerce!</span>
+    <div class="top-bar-links">
+      <form style="display: inline; margin-right: 15px;">
+        <input type="text" placeholder="Username" required style="padding: 2px 5px; margin-right: 5px;">
+        <input type="password" placeholder="Password" required style="padding: 2px 5px; margin-right: 5px;">
+        <button type="submit" style="cursor: pointer;">Login</button>
+      </form>
+      <strong>Keranjang (<span id="cart-count">0</span>)</strong>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <h1 class="brand-logo"><span>Rainfall</span> E commerce</h1>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">Beranda</a></li>
+      <li><a href="product.html">Produk</a></li>
+      <li><a href="about.html">Tentang Kami</a></li>
+      <li><a href="kontak.html">Kontak & Admin</a></li>
+    </ul>
+    <div class="search-box">
+      <input type="text" placeholder="Pindah ke menu Produk..." disabled>
+      <button disabled>Q</button>
+    </div>
+  </nav>
+
+  <header class="hero-section">
+    <div class="hero-text">
+      <h2>Belanja Online<br>Jadi <em>Lebih Mudah</em></h2>
+      <p>Temukan berbagai produk <strong>terbaik</strong> dengan harga terjangkau hanya di <u>Rainfall E commerce</u>.</p>
+      <a href="produk.html"><button class="btn-primary">Belanja Sekarang</button></a>
+    </div>
+    <div class="hero-image">
+      <img src="placeholder.jpg" alt="Shopping Banner">
+    </div>
+  </header>
+
+  <main class="main-content">
+    <h3 class="section-title">Keunggulan Layanan Kami</h3>
+    <div class="features-grid">
+      <div class="feature-item">
+        <strong>Gratis Ongkir</strong>
+        <p>Min. belanja Rp 100.000</p>
+      </div>
+      <div class="feature-item">
+        <strong>Pembayaran Aman</strong>
+        <p>100% aman dan terpercaya</p>
+      </div>
+      <div class="feature-item">
+        <strong>Layanan 24/7</strong>
+        <p>Kami siap membantu Anda</p>
+      </div>
+      <div class="feature-item">
+        <strong>Garansi 7 Hari</strong>
+        <p>Pengembalian barang mudah</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

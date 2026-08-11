@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak - Rainfall E-Commerce</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <div class="top-bar">
+    <span>Selamat datang di Rainfall E-commerce!</span>
+    <div class="top-bar-links">
+      <strong>Keranjang (<span id="cart-count">0</span>)</strong>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <h1 class="brand-logo"><span>Rainfall</span> E commerce</h1>
+    <ul class="nav-menu">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="product.html">Produk</a></li>
+      <li><a href="about.html">Tentang Kami</a></li>
+      <li><a href="kontak.html" class="active">Kontak & Admin</a></li>
+    </ul>
+    <div class="search-box">
+      <input type="text" placeholder="Pindah ke menu Produk..." disabled>
+      <button disabled>Q</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <h3 class="section-title">Pusat Bantuan & Admin</h3>
+    <section class="academic-requirements">
+      <div class="admin-section" style="width: 100%;">
+        
+        <h3>Tambah Produk Baru (Akses Admin)</h3>
+        <form class="add-product-form">
+          <input type="text" placeholder="Nama Produk" required>
+          <input type="text" id="price-input" placeholder="Harga (Otomatis format angka)" required>
+          <button type="submit" class="btn-primary">Listing Item</button>
+        </form>
+
+        <br>
+        <h3>Jam Operasional Layanan Pelanggan</h3>
+        <table class="info-table">
+          <thead>
+            <tr>
+              <th>Hari</th>
+              <th>Jam Buka</th>
+              <th>Jam Tutup</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Senin - Jumat</td>
+              <td>08:00 WIB</td>
+              <td>20:00 WIB</td>
+            </tr>
+            <tr>
+              <td>Sabtu - Minggu</td>
+              <td>09:00 WIB</td>
+              <td>17:00 WIB</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
