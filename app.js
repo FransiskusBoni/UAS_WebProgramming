@@ -6,14 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
         cartCountElement.innerText = cartCount;
     }
 
-    const buyButtons = document.querySelectorAll(".btn-secondary");
-    buyButtons.forEach(button =>{
-        button.addEventListener("click", () =>{
+    document.body.addEventListener("click", function(e) {
+        if (e.target && e.target.classList.contains("btn-secondary") && e.target.innerText === "Tambah ke Keranjang") {
             cartCount++;
             localStorage.setItem("cartCount", cartCount);
             if (cartCountElement) cartCountElement.innerText = cartCount;
             alert("Produk berhasil ditambahkan ke keranjang");
-        });
+        }
     });
 
     const searchInput = document.getElementById("search-input");
@@ -46,12 +45,54 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    const forms = document.querySelectorAll("form");
+    const addProductForm = document.getElementById("add-product-form");
+    if (addProductForm) {
+        addProductForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            
+            const nameInput = document.getElementById("product-name").value;
+            const priceVal = document.getElementById("price-input").value;
+
+            let products = JSON.parse(localStorage.getItem("storeProducts")) || [];
+            
+            products.push({
+                name: nameInput,
+                price: priceVal,
+                image: "placeholder.jpg"
+            });
+
+            localStorage.setItem("storeProducts", JSON.stringify(products));
+
+            alert(`Sukses! ${nameInput} berhasil masuk ke sistem listing. Silakan cek halaman Produk.`);
+            addProductForm.reset();
+        });
+    }
+
+    const forms = document.querySelectorAll("form:not(#add-product-form)");
     forms.forEach(form =>{
         form.addEventListener("submit", (e) =>{
             e.preventDefault();
-            alert("Formulir berhasil disubmit (Simulasi)!");
+            alert("Berhasil login!");
             form.reset();
         });
     });
+
+    const productContainer = document.getElementById("product-container");
+    if (productContainer) {
+        let products = JSON.parse(localStorage.getItem("storeProducts")) || [];
+        
+        products.forEach(product => {
+            const newCard = document.createElement("div");
+            newCard.className = "card";
+            newCard.innerHTML = `
+                <img src="${product.image}" alt="${product.name}">
+                <div class="card-info">
+                  <h4>${product.name}</h4>
+                  <p class="price">${product.price}</p>
+                  <button class="btn-secondary">Tambah ke Keranjang</button>
+                </div>
+            `;
+            productContainer.appendChild(newCard);
+        });
+    }
 });
